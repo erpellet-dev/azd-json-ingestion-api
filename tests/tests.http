@@ -1,0 +1,28 @@
+
+# Before using this request, run script "set-env.sh" to sync environment variables with
+# the active azd environment.
+
+###
+GET {{$dotenv %API_URL}}
+
+###
+POST {{$dotenv %API_URL}}
+content-type: application/json
+
+{
+    "content": [{
+        "timestamp": {{$timestamp}},
+        "value": {{$randomInt 1 43}}
+    },{
+        "timestamp": {{$timestamp}},
+        "value": {{$randomInt 1 43}}
+    },{
+        "timestamp": {{$timestamp}},
+        "value": {{$randomInt 1 43}}
+    }],
+    "file": "{{$timestamp}}-{{$guid}}",
+    "timeGenerated": {{$timestamp}},
+    "id": "{{$guid}}"
+}
+    
+###    

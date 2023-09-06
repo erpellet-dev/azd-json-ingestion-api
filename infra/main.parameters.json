@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentName": {
+      "value": "${AZURE_ENV_NAME}"
+    },
+    "location": {
+      "value": "${AZURE_LOCATION}"
+    },
+    "apiAppExists": {
+      "value": "${SERVICE_API_RESOURCE_EXISTS=false}"
+    },
+    "imageName": {
+      "value": "${IMAGE_NAME=ingestionapi}"
+    },
+    "apiGitRepoUrl": {
+      "value": "${API_GIT_REPO_URL=https://github.com/abossard/api-to-parquet}"
+    },
+    "dockerImage": {
+      "value": "${DOCKER_IMAGE}"
+    },
+    "forceDockerImageBuild": {
+      "value": "${FORCE_DOCKER_IMAGE_BUILD=false}"
+    },
+    "storageContainerName": {
+      "value": "${STORAGE_CONTAINER_NAME=data}"
+    },
+    "redisProdEnableNonSslPort": {
+      "value": "${REDIS_CACHE_PROD_ENABLE_NON_SSL=true}"
+    },
+    "enableRedisDevService": {
+      "value": "${ENABLE_REDIS_CACHE_DEV=true}"
+    }
+  }
+}
